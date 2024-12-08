@@ -111,94 +111,11 @@ info.onScore(50, function () {
 function Level_2 () {
     Hero.setPosition(76, 99)
     controller.moveSprite(Hero, 150, 0)
-    tiles.setCurrentTilemap(tilemap`level10`)
+    tiles.setCurrentTilemap(tilemap`level`)
     statusbar = statusbars.create(30, 4, StatusBarKind.CO2)
     statusbar.setLabel("CO2")
     statusbar.setColor(7, 2)
     statusbar.value = 50
-    for (let index = 0; index < 5; index++) {
-        sol = sprites.create(img`
-            5 . . . . . . 5 . . . . . . . 5 
-            5 5 . . . . . 5 . . . . . 5 5 5 
-            . . 5 . . . . . . . . . 5 5 . . 
-            . . . . 5 5 5 5 5 5 5 . . . . . 
-            . . . 5 5 5 5 5 5 5 5 5 . . . . 
-            . . . 5 5 5 5 5 5 5 5 5 . . . . 
-            . . . 5 5 5 5 5 5 5 5 5 . . . . 
-            5 5 . 5 5 5 5 5 5 5 5 5 . 5 5 5 
-            . . . 5 5 5 5 5 5 5 5 5 . . . . 
-            . . . 5 5 5 5 5 5 5 5 5 . . . . 
-            . . . 5 5 5 5 5 5 5 5 5 . . . . 
-            . . . . 5 5 5 5 5 5 5 . 5 . . . 
-            . . . . . . . . . . . . 5 5 . . 
-            . 5 5 . . . . . 5 . . . . 5 5 . 
-            5 5 . . . . . 5 5 . . . . . 5 5 
-            . . . . . . . 5 5 . . . . . . 5 
-            `, SpriteKind.Vedvarende_energi)
-        sol.setPosition(randint(10, 145), 10)
-        sol.setVelocity(0, 50)
-        vind = sprites.create(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . 1 1 1 1 . . . . . 
-            . . . . . . 1 1 . . 1 1 . . . . 
-            . . . . . . 1 1 . 1 . 1 1 . . . 
-            1 1 1 1 . . . 1 1 1 . . 1 . . . 
-            . 1 1 1 1 1 . . . . . . 1 . . . 
-            . . . . . 1 1 1 . . . . 1 . . . 
-            . . . . . . . 1 1 1 1 1 1 . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . 1 1 1 1 1 1 1 1 . . . . 
-            . 1 1 1 1 1 . . . . 1 1 1 . . . 
-            1 1 . . . . . . 1 1 1 . 1 1 . . 
-            . . . . . . . 1 1 1 1 . . 1 . . 
-            . . . . . . . 1 . 1 . . 1 1 . . 
-            . . . . . . . 1 . . 1 1 1 . . . 
-            . . . . . . . 1 1 1 1 . . . . . 
-            `, SpriteKind.Vedvarende_energi)
-        vind.setPosition(randint(10, 145), 10)
-        vind.setVelocity(0, 50)
-        Kul = sprites.create(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . f f f f . . . . . . 
-            . . . . . f f f f f f . . . . . 
-            . . . f f f f f f f f f f f . . 
-            . . f f f f f f f f f f f f . . 
-            . . f f f f f f f f f f f f . . 
-            . . f f f f f f f f f f f f . . 
-            . . f f f f f f f f f f f f . . 
-            . . f f f f f f f f f f . . . . 
-            . . . . . f f f f f f . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `, SpriteKind.Fossile_brændstoffer)
-        Kul.setPosition(randint(10, 145), 10)
-        Kul.setVelocity(0, 50)
-        Olie = sprites.create(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . f f . . . . . . . 
-            . . . . . . f f f f . . . . . . 
-            . . . . . f f 5 5 f f . . . . . 
-            . . . . . f 5 5 5 5 f . . . . . 
-            . . . . f f 5 5 5 5 f . . . . . 
-            . . . f f 5 5 5 5 5 f f . . . . 
-            . . . f 5 5 5 5 5 5 5 f f . . . 
-            . . f f 5 5 5 5 5 5 5 5 f . . . 
-            . f f 5 5 5 5 5 5 5 5 5 f . . . 
-            . f 5 5 5 5 5 5 5 5 5 5 f f . . 
-            . f 5 5 5 5 5 5 5 5 1 1 f f . . 
-            . f f 5 5 5 5 5 5 1 1 1 5 f . . 
-            . . f f 5 5 5 5 5 1 5 5 f f . . 
-            . . . f 5 5 5 5 1 1 5 f f . . . 
-            . . . f f f f f f f f . . . . . 
-            `, SpriteKind.Fossile_brændstoffer)
-        Olie.setPosition(randint(10, 145), 10)
-        Olie.setVelocity(0, 50)
-        pause(1000)
-    }
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Vedvarende_energi, function (sprite, otherSprite) {
     statusbar.value += 1
@@ -218,10 +135,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile11`, function (sprite, 
         tiles.setTileAt(location, assets.tile`transparency16`)
     }
 })
-let Olie: Sprite = null
-let Kul: Sprite = null
-let vind: Sprite = null
-let sol: Sprite = null
 let statusbar: StatusBarSprite = null
 let Brugernavn = ""
 let Svar1 = 0
@@ -239,4 +152,3 @@ true
 controller.moveSprite(Hero)
 Hero.setStayInScreen(true)
 scene.cameraFollowSprite(Hero)
-tiles.placeOnRandomTile(Hero, sprites.skillmap.islandTile4)
